@@ -1,12 +1,16 @@
 # BalcaoExpress
 
-Plataforma digital da ALINVEST para solicitação de serviços contabilísticos, fiscais e ISPC, com foco inicial em Maputo Cidade e Matola.
+Plataforma digital da ACJL — Contabilidade & Serviços — para solicitação de serviços contabilísticos, fiscais e ISPC, com foco inicial em Maputo Cidade e Matola.
+
+## Contactos públicos
+- Email: acjl.corporate@gmail.com
+- WhatsApp/telefone: +258 876 858 131
 
 ## Stack
 - Next.js App Router + TypeScript
 - Catálogo de serviços e estimativa de honorários
 - API de pedidos sem base de dados própria
-- Email transaccional SMTP: cópia integral para ALINVEST e confirmação ao cliente
+- Email transaccional SMTP: cópia integral para ACJL e confirmação ao cliente
 
 ## Desenvolvimento
 1. npm install
@@ -14,18 +18,18 @@ Plataforma digital da ALINVEST para solicitação de serviços contabilísticos,
 3. npm run dev
 
 ## Configuração obrigatória para receber pedidos
-Configurar SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM e MAIL_TO no ambiente de execução. O destinatário predefinido é info@alinvest-group.com. A API rejeita novas submissões com HTTP 503 enquanto SMTP não estiver configurado, evitando apresentar como recebido um pedido que não foi encaminhado.
+Configurar SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, MAIL_FROM e MAIL_TO no ambiente de execução. O destinatário predefinido é acjl.corporate@gmail.com. A API rejeita novas submissões com HTTP 503 enquanto SMTP não estiver configurado, evitando apresentar como recebido um pedido que não foi encaminhado.
 
 ## Pagamentos
-A selecção M-Pesa/transferência nesta primeira entrega apenas regista a preferência e deixa o estado como pending_confirmation. Não existe integração M-Pesa activa nem confirmação automática de transferência. A integração oficial depende de credenciais, especificação do provedor e URL de callback. Nunca solicitar PIN.
+Nesta fase o formulário não recolhe pagamentos nem apresenta uma opção M-Pesa. Após analisar o pedido, a ACJL contacta o cliente e indica as instruções de pagamento. A integração M-Pesa será desenvolvida numa fase posterior, com credenciais e callback oficial. Nunca solicitar PIN ao cliente.
 
 ## Antes de produção
 1. Configurar e testar SMTP de saída e entrega.
-2. Confirmar dados bancários e publicar apenas depois de validação.
-3. Integrar M-Pesa oficial e validar callback, assinatura e idempotência.
+2. Confirmar os dados bancários e o procedimento de confirmação de pagamento.
+3. Integrar M-Pesa oficial numa fase posterior, validando callback, assinatura e idempotência.
 4. Validar termos, privacidade, cancelamento e reembolso juridicamente.
 5. Confirmar se a logística Maputo/Matola é por deslocação ou ida e volta.
-6. Executar testes de formulário, mobile, emails e pagamentos.
+6. Executar testes de formulário, mobile e emails.
 
 ## Importante
-Não existe painel administrativo nem persistência própria dos pedidos, conforme o projecto consolidado. O email enviado funciona como registo operacional inicial. A equipa deverá arquivar e acompanhar cada referência nas caixas de correio.
+Não existe painel administrativo nem persistência própria dos pedidos nesta versão. O email enviado funciona como registo operacional inicial. A equipa deverá arquivar e acompanhar cada referência nas caixas de correio.
