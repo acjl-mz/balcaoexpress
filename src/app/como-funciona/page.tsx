@@ -1,0 +1,1 @@
+import {Header,Footer,How} from "@/components/Site";export default function Page(){return <><Header/><section className="pagehero"><div className="container"><h1>Como funciona</h1><p className="muted">Sem criação de conta e sem processos comerciais demorados.</p></div></section><section className="section"><div className="container"><How/></div></section><Footer/></>}
